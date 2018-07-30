@@ -1,0 +1,191 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Waterwheel Carousel Demo</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery.waterwheelCarousel.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var carousel = $("#carousel").waterwheelCarousel({
+          flankingItems: 3,
+          movingToCenter: function ($item) {
+            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedToCenter: function ($item) {
+            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movingFromCenter: function ($item) {
+            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedFromCenter: function ($item) {
+            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          clickedCenter: function ($item) {
+            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+          }
+        });
+
+        $('#prev').bind('click', function () {
+          carousel.prev();
+          return false
+        });
+
+        $('#next').bind('click', function () {
+          carousel.next();
+          return false;
+        });
+
+        $('#reload').bind('click', function () {
+          newOptions = eval("(" + $('#newoptions').val() + ")");
+          carousel.reload(newOptions);
+          return false;
+        });
+          
+          var carousel1 = $("#carousel1").waterwheelCarousel({
+          flankingItems: 3,
+          movingToCenter: function ($item) {
+            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedToCenter: function ($item) {
+            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movingFromCenter: function ($item) {
+            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedFromCenter: function ($item) {
+            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          clickedCenter: function ($item) {
+            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+          }
+        });
+
+        $('#prev').bind('click', function () {
+          carousel1.prev();
+          return false
+        });
+
+        $('#next').bind('click', function () {
+          carousel1.next();
+          return false;
+        });
+
+        $('#reload').bind('click', function () {
+          newOptions = eval("(" + $('#newoptions').val() + ")");
+          carousel1.reload(newOptions);
+          return false;
+        });
+
+
+      });
+    </script>
+
+    <style type="text/css">
+      body {
+        font-family:Arial;
+        font-size:12px;
+        background-image: url(bg-tec-spec.jpg);
+          background: linear-gradient(to right, grey, white);
+      }
+      .example-desc {
+        margin:3px 0;
+        padding:5px;
+      }
+
+      #carousel {
+        width:75%;
+        margin: 0 auto;
+        border:1px solid #222;
+        border-width: 5px;
+        height:300px;
+        position:relative;
+        clear:both;
+        overflow:hidden;
+        background-image: url(bg-tec-spec.jpg);
+      }
+        #carousel1 {
+        width:50%;
+        margin: 0 auto;
+        height:100px;
+        clear:both;
+        overflow:hidden;
+        
+      }
+        
+      #carousel img {
+        visibility:hidden; /* hide images until carousel can handle them */
+        cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+      }
+         #carousel1 img {
+        visibility:hidden; /* hide images until carousel can handle them */
+        cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+      }
+
+      .split-left {
+        width:450px;
+        float:left;
+      }
+      .split-right {
+        width:400px;
+        float:left;
+        margin-left:10px;
+      }
+      #callback-output {
+        height:250px;
+        overflow:scroll;
+      }
+      textarea#newoptions {
+        width:430px;
+      }
+        .next
+        {
+            text-align: center;
+            font-size: 20px;
+            margin-top:3%;
+            color: black;
+        }
+        
+    </style>
+  </head>
+  <body>
+      
+     
+      <img src="lambrologo.png" style="float: left; margin-left: 3%;">
+      
+    <h1 style="text-align: center;margin-bottom: 5%;font-size: 40px; font-family:monospace;">Colors Avaliable for Sypder Lambrogini</h1>
+       <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+    <div id="carousel">
+      <a href="#"><img src="redcar.png" id="item-1" width="500px;" /></a>
+      <a href="#"><img src="greycar.jpg" id="item-2" width="500px;" /></a>
+      <a href="#"><img src="yellowcar.png" id="item-3" width="500px;"/></a>
+      <a href="#"><img src="orangecar.png" id="item-4" width="500px;"/></a>
+      <a href="#"><img src="bluecar.jpg" id="item-5" width="500px;"/></a>
+      <a href="#"><img src="cyancar.png" id="item-6" width="500px;"/></a>
+      <a href="#"><img src="whitecar.png" id="item-7" width="500px;"/></a>
+    </div>
+      <div class="next">
+    <a href="#" id="prev" style="color: black;" >Prev</a> | <a href="#" id="next" style="color: black;">Next</a>
+      </div>
+      
+       <div id="carousel1">
+      <a href="#"><img src="red.PNG" id="item-1" width="200px;" /></a>
+           <a href="#"><img src="black.PNG" id="item-2" width="200px;" /></a>
+           <a href="#"><img src="yellow.PNG" id="item-3" width="200px;" /></a>
+           <a href="#"><img src="orange.PNG" id="item-4" width="200px;" /></a>
+           <a href="#"><img src="blue.PNG" id="item-5" width="200px;" /></a>
+           <a href="#"><img src="cyan.PNG" id="item-6" width="200px;" /></a>
+            <a href="#"><img src="white.PNG" id="item-7" width="200px;" /></a>
+            </div>
+         </div>
+          </div>
+</div>
+    </body>
+</html>
+
