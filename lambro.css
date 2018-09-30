@@ -294,16 +294,76 @@ html, body { overflow-x: hidden; }
     to {left: 50%;}
 }
 
+@media only screen and (max-width: 950px) {
+ 
+   .mynavbar
+  {  
+    display: none;
+  }
+    .dropbtn {
+    background-color: transparent;
+    color: darkslategray;
+        border: 1px solid transparent;
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
+.dropdown-content a:hover {background-color: darkslategray;color: deeppink; }
 
+.dropdown:hover .dropdown-content {display: block; background-color: darkslategrey; color: white; opacity: 1.0;}
 
-
-
-
-
-
-
-
+.dropdown:hover .dropbtn {background-color: black; }
+    
+    .smallnavbar
+{
+     width: auto;
+    opacity: 1.0;
+    height: 50px;
+    background-color: black;
+    font-family:sans-serif;
+}
+    .hur {  
+    display: none;
+  }
+    .vivid {  
+    display: none;
+  }
+    .paracontainer
+    {  
+    display: none;
+  }
+    #color
+    {  
+    display: none;
+  }
+    #technical
+    {  
+    display: none;
+  }   
+}
+@media only screen and (min-width: 950px) {
+.smallheading
+{
+    display: none;
+}
+}
